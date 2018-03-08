@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Stock Management</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="node_modules/simple-line-icons/css/simple-line-icons.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+  
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="index.html">
+          <img src="images/logo.jpg" alt="logo"/>
+        </a>
+        
+        <a class="navbar-brand brand-logo-mini" href="index.html">
+          <img src="images/logo-mini.jpg" alt="logo"/>
+        </a>
+    </div>
+      
+    <div class="navbar-menu-wrapper d-flex align-items-center">
+        <!-- <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="mdi mdi-image-filter"></i>Gallery</a>
+          </li>
+          
+          <li class="nav-item active">
+            <a href="#" class="nav-link"><i class="mdi mdi-email-outline"></i>Inbox</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="mdi mdi-calendar"></i>Calendar</a>
+          </li>
+        </ul> -->
+        
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-bell-ring"></i>
+              <span class="count">4</span>
+            </a>
+            
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <a class="dropdown-item">
+                <p class="mb-0 font-weight-normal float-left">You have 4 new notifications
+                </p>
+                <span class="badge badge-pill badge-warning float-right">View all</span>
+              </a>
+            
+             <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="icon-info mx-0"></i>
+                  </div>
+                </div>
+                
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-medium">Application Error</h6>
+                  <p class="font-weight-light small-text">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="icon-speech mx-0"></i>
+                  </div>
+                </div>
+                
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-medium">Settings</h6>
+                  <p class="font-weight-light small-text">
+                    Private message
+                  </p>
+                </div>
+              </a>
+              
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="icon-envelope mx-0"></i>
+                  </div>
+                </div>
+                
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-medium">New user registration</h6>
+                  <p class="font-weight-light small-text">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <i class="mdi mdi-email-variant"></i>
+              <span class="count">7</span>
+            </a>
+           
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+				<div class="dropdown-item">
+					<p class="mb-0 font-weight-normal float-left">You have 7 unread mails</p>
+					<span class="badge badge-info badge-pill float-right">View all</span>
+				</div>
+            
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                </div>
+              
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium">David Grey
+                    <span class="float-right font-weight-light small-text">1 Minutes ago</span>
+                  </h6>
+                
+                  <p class="font-weight-light small-text">
+                    The meeting is cancelled
+                  </p>
+                </div>
+              </a>
+              
+              <div class="dropdown-divider"></div>
+               <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                </div>
+                
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium">Tim Cook
+                    <span class="float-right font-weight-light small-text">15 Minutes ago</span>
+                  </h6>
+                  <p class="font-weight-light small-text">
+                    New product launch
+                  </p>
+                </div>
+              </a>
+
+              <div class="dropdown-divider"></div>
+               <a class="dropdown-item preview-item">
+                
+                <div class="preview-thumbnail">
+                  <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                </div>
+                
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium"> Johnson
+                    <span class="float-right font-weight-light small-text">18 Minutes ago</span>
+                  </h6>
+                  
+                  <p class="font-weight-light small-text">
+                    Upcoming board meeting
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="#">
+              <img class="img-xs rounded-circle" src="images/faces/face4.jpg" alt="">
+            </a>
+          </li>
+        </ul>
+        
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+
+
+
+ <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <div class="nav-link">
+              
+               <div class="profile-image"> 
+                 <img src="images/faces/face4.jpg" alt="image"/>  
+               </div>
+              
+              <div class="profile-name">
+                <p class="name"> Brill salon</p>
+                <p class="designation">Manager</p>
+              </div>
+            
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <img class="menu-icon" src="images/menu_icons/01.png" alt="menu icon">
+               <span class="menu-title">Dashboard</span>
+             </a>
+           </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="StaffManagement.html">
+              <img class="menu-icon" src="images/menu_icons/02.png" alt="menu icon">
+              <span class="menu-title">Staff Management</span>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="CustomerManagement.html">
+              <img class="menu-icon" src="images/menu_icons/03.png" alt="menu icon">
+               <span class="menu-title">Customer Management</span>
+             </a>
+           </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="OnlineOrder.html">
+              <img class="menu-icon" src="images/menu_icons/04.png" alt="menu icon">
+              <span class="menu-title">Online Order's</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="StockManagement.html">
+              <img class="menu-icon" src="images/menu_icons/05.png" alt="menu icon">
+              <span class="menu-title">Stock Management</span>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="CreteBill.html">
+              <img class="menu-icon" src="images/menu_icons/06.png" alt="menu icon">
+               <span class="menu-title">Crete Bill</span>
+             </a>
+           </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="Accounting.html">
+              <img class="menu-icon" src="images/menu_icons/07.png" alt="menu icon">
+               <span class="menu-title">Accounting</span>
+             </a>
+           </li>
+          
+           <li class="nav-item">
+            <a class="nav-link" href="Buyers.html">
+              <img class="menu-icon" src="images/menu_icons/08.png" alt="menu icon">
+               <span class="menu-title">Buyers</span>
+             </a>
+           </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages"> 
+              <img class="menu-icon" src="images/menu_icons/08.png" alt="menu icon">
+               <span class="menu-title">OTHER PAGE</span>
+               <i class="menu-arrow"></i>
+             </a>
+            
+            <div class="collapse" id="general-pages">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> 
+                  <a class="nav-link" href="pages/samples/blank-page.html">Blank Page</a>
+                </li>
+                
+                <li class="nav-item">
+                 <a class="nav-link" href="pages/samples/login.html">Login</a>
+               </li>
+               
+                <li class="nav-item"> 
+                  <a class="nav-link" href="pages/samples/register.html">Register</a>
+                </li>
+                
+                <li class="nav-item"> 
+                  <a class="nav-link" href="pages/samples/error-404.html">404</a>
+                </li>
+                
+                <li class="nav-item"> 
+                  <a class="nav-link" href="pages/samples/error-500.html">500</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="Feedback.html">
+              <img class="menu-icon" src="images/menu_icons/09.png" alt="menu icon"> 
+               <span class="menu-title">Feedback</span>
+             </a>
+           </li>
+           </ul>
+      </nav>
+
+      <!-- partial -->
+       <div class="main-panel">
+        <div class="content-wrapper">
+			<div class="container">
+				<div class="row">
+					
+					<div class="container">
+						<div class="row" align="center">
+							<div class="col-sm-12 justify-content-center">
+								<h1>Stock Product Details</h1>
+							</div>
+						</div>
+						
+						<div class="row" style="height:50px;"></div>
+					
+						<div class="row">
+							<div class="col-lg-12">
+							
+							<form action="#">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="form-group" align="right" style="padding-top:5%;" >
+											<label>Product name:</label>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<input type="text" name="name" class="form-control" />
+										</div>
+									</div>
+									
+									<div class="col-sm-2"></div>
+								
+									<div class="col-sm-2">
+										<div class="form-group" align="right" style="padding-top:5%;">
+											<label>Quantity:</label>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<input type="text" name="code" class="form-control" />
+										</div>
+									</div>
+								</div>
+							
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="form-group" align="right" style="padding-top:5%;" >
+											<label>Amount:</label>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<input type="text" name="name" class="form-control" />
+										</div>
+									</div>
+									
+									<div class="col-sm-2"></div>
+								
+									<div class="col-sm-2">
+										<div class="form-group" align="right" style="padding-top:5%;">
+											<label>Purchased on:</label>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<input type="text" name="code" class="form-control" />
+										</div>
+									</div>
+								</div>
+							
+								<div class="row">
+									<div class="col-sm-2">
+										<div class="form-group" align="right" style="padding-top:5%;" >
+											<label>Delievered on:</label>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<input type="text" name="name" class="form-control" />
+										</div>
+									</div>
+									
+									<div class="col-sm-2"></div>
+								
+									<div class="col-sm-2">
+										<div class="form-group" align="right" style="padding-top:5%;">
+											<label>Payment made on:</label>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<input type="text" name="code" class="form-control" />
+										</div>
+									</div>
+								</div>	
+							</div>
+							
+							<div class="row" align="center" style="margin-top:30px;">
+								<div class="col-sm-6" align="right">
+									<button name="add" type="refresh" class="btn btn-primary ">REFRESH</button>
+								</div>
+								
+								<div class="col-sm-6" align="left">
+									<button name="insert" type="submit" class="btn btn-primary ">INSERT</button>
+								</div>
+							</div>
+							</form>
+							</div>
+							
+						</div>
+						
+						<div class="row justify-content-center" style="margin-top:50px;">
+							<h1>Stock Details</h1>
+						</div>
+						
+						<div class="row justify-content-center" style="margin-top:30px;">
+							<div class="col-sm-12">
+								<table class="table table-striped table-primary table-bordered">
+									<thead  style="background-color:#1991EB; border-color:#1991EB;">
+										<tr>
+										<th>S.no.</th>
+										<th>Name</th>
+										<th>Quantity</th>
+										<th>Amount(INR)</th>
+										<th>Purchased on</th>
+										<th>Dilievered on</th>
+										<th>Payment on</th>
+										</tr>
+									</thead>
+									
+									<tr>
+										<td>1</td>
+										<td>Shampoo</td>
+										<td>10</td>
+										<td>1200</td>
+										<td>6.03.2018</td>
+										<td>6.03.2018</td>
+										<td>7.03.2018</td>
+									</tr>
+									
+									<tr>
+										<td>1</td>
+										<td>Shampoo</td>
+										<td>10</td>
+										<td>1200</td>
+										<td>6.03.2018</td>
+										<td>6.03.2018</td>
+										<td>7.03.2018</td>
+									</tr>
+									
+									<tr>
+										<td>1</td>
+										<td>Shampoo</td>
+										<td>10</td>
+										<td>1200</td>
+										<td>6.03.2018</td>
+										<td>6.03.2018</td>
+										<td>7.03.2018</td>
+									</tr>
+									
+									<tr>
+										<td>1</td>
+										<td>Shampoo</td>
+										<td>10</td>
+										<td>1200</td>
+										<td>6.03.2018</td>
+										<td>6.03.2018</td>
+										<td>7.03.2018</td>
+									</tr>
+									
+									<tr>
+										<td>1</td>
+										<td>Shampoo</td>
+										<td>10</td>
+										<td>1200</td>
+										<td>6.03.2018</td>
+										<td>6.03.2018</td>
+										<td>7.03.2018</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+         
+         <!-- <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <i class="mdi mdi-cube text-danger icon-lg"></i>
+                    </div>
+
+                    <div class="float-right">
+                      <p class="card-text text-right">Total Revenue</p>
+                      <div class="fluid-container">
+                        <h3 class="card-title font-weight-bold text-right mb-0">$1001</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="text-muted mt-3">
+                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% growth
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <i class="mdi mdi-receipt text-warning icon-lg"></i>
+                    </div>
+
+                    <div class="float-right">
+                      <p class="card-text text-right">Orders</p>
+                      <div class="fluid-container">
+                        <h3 class="card-title font-weight-bold text-right mb-0">11</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="text-muted mt-3">
+                    <i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Product-wise sales
+                  </p>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <i class="mdi mdi-poll-box text-teal icon-lg"></i>
+                    </div>
+
+                    <div class="float-right">
+                      <p class="card-text text-right">Sales</p>
+                      <div class="fluid-container">
+                        <h3 class="card-title font-weight-bold text-right mb-0">1000</h3>
+                      </div>
+                    </div>
+
+                  </div>
+                  <p class="text-muted mt-3">
+                    <i class="mdi mdi-calendar mr-1" aria-hidden="true"></i> Weekly Sales
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <i class="mdi mdi-account-location text-info icon-lg"></i>
+                    </div>
+
+                    <div class="float-right">
+                      <p class="card-text text-right">Employees</p>
+                      <div class="fluid-container">
+                        <h3 class="card-title font-weight-bold text-right mb-0">6</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="text-muted mt-3">
+                    <i class="mdi mdi-reload mr-1" aria-hidden="true"></i> Product-wise sales
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>-->
+      </div>
+  </div>
+</div>
+</html>
